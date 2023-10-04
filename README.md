@@ -5,7 +5,7 @@ The backdoor bot allows trusted members of the Makerspace to manually set the ac
 status of the Activity Indicator via the backdoor chatbot.
 
 The backdoor bot is intended to be used in cases where the makerspace (or more specifically, 
-the university) is suffering from internet outages, or other types of failurs. Trusted members
+the university) is suffering from internet outages, or other types of failures. Trusted members
 have access to a group chat in which the backdoor bot is accessible.
 
 The use of the backdoor should be limited to technical difficulities and the occasional mishaps

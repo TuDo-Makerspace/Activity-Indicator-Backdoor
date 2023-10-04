@@ -1,0 +1,10 @@
+[Unit]
+Description=Activity Indicator backdoor bot service
+
+[Service]
+Type=simple
+Restart=on-failure
+ExecStart=activity-indicator-backdoor -c /var/lib/activity-indicator-backdoor/activity-indicator-backdoor.ini
+
+[Install]
+WantedBy=multi-user.target

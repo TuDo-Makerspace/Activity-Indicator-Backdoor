@@ -48,6 +48,14 @@ elif [[ "$1" == "install" ]]; then
         echo "Setting up systemd service..."
         cp -v $PROJECT_DIR/activity-indicator-backdoor.service $SYSTEMD_DIR/activity-indicator-backdoor.service
 
+        # Stop service if running
+        echo "Stopping systemd service (if running)..."
+        systemctl stop activity-indicator-backdoor.service
+
+        # Disable service if enabled
+        echo "Disabling systemd service (if enabled)..."
+        systemctl disable activity-indicator-backdoor.service
+
         echo "Enabling systemd service..."
         systemctl enable activity-indicator-backdoor.service
 

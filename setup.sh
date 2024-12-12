@@ -40,6 +40,7 @@ elif [[ "$1" == "install" ]]; then
 	echo "Installing activity-indicator backdoor server"
 
         cp -v $PROJECT_DIR/activity-indicator-backdoor.py $BIN_DIR/activity-indicator-backdoor
+        chmod +x $BIN_DIR/activity-indicator-backdoor
 
         mkdir -p $CFG_DIR
         cp -v $PROJECT_DIR/activity-indicator-backdoor.ini $CFG_DIR/activity-indicator-backdoor.ini

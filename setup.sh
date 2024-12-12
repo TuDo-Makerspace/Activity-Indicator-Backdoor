@@ -51,6 +51,9 @@ elif [[ "$1" == "install" ]]; then
         echo "Enabling systemd service..."
         systemctl enable activity-indicator-backdoor.service
 
+        echo "Starting systemd service..."
+        systemctl start activity-indicator-backdoor.service
+
         echo "Installation complete, the activity switch should be running now!"
 elif [ "$1" == "uninstall" ]; then
         echo "Uninstalling..."

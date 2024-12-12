@@ -34,21 +34,21 @@ open_msg = None
 close_msg = None
 backdoor_chat_id = None
 
-typo3_rest_uname = None
-typo3_rest_pwd = None
-typo3_rest_url = None
+rest_uname = None
+rest_pwd = None
+rest_url = None
 
 
 # Updates status on website via REST call
 def send_post_request(open: bool):
     response = requests.post(
-        typo3_rest_url + POST_ENDPOINT + ("open" if open else "closed"),
-        auth=(typo3_rest_uname, typo3_rest_pwd),
+        rest_url + POST_ENDPOINT + ("open" if open else "closed"),
+        auth=(rest_uname, rest_pwd),
     )
 
     # Print error message if POST request failed
     if response.status_code != 200:
-        print("typo3-activity-indicator.py: Request Failed: " + response.text)
+        print("activity-indicator-backdoor.py: Request Failed: " + response.text)
 
 
 # Sends a message into the Activity Indicator broadcast channel
@@ -115,9 +115,9 @@ if __name__ == "__main__":
     open_msg = config["AIBot"]["OpenMessage"]
     close_msg = config["AIBot"]["CloseMessage"]
 
-    typo3_rest_uname = config["Typo3"]["Username"]
-    typo3_rest_pwd = config["Typo3"]["Password"]
-    typo3_rest_url = config["Typo3"]["URL"]
+    rest_uname = config["Website"]["Username"]
+    rest_pwd = config["Website"]["Password"]
+    rest_url = config["Website"]["URL"]
 
     # Set up command handlers
     app = ApplicationBuilder().token(backdoor_token).build()

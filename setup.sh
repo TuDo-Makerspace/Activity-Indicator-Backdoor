@@ -36,8 +36,6 @@ PROJECT_DIR="$SCRIPT_DIR"
 if [ "$EUID" -ne 0 ]
   then echo "Please run as root"
   exit
-fi
-
 elif [[ "$1" == "install" ]]; then
 	echo "Installing activity-indicator backdoor server"
 

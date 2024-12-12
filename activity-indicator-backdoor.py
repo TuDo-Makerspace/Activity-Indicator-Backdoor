@@ -26,7 +26,7 @@ import requests
 from telegram import Update
 from telegram.ext import ApplicationBuilder, ContextTypes, CommandHandler
 
-POST_ENDPOINT = "/api/ActivityIndicator/activity/"
+POST_ENDPOINT = "/api/activityIndicator"
 
 ai_bot = None
 ai_chat_id = None
@@ -42,7 +42,8 @@ rest_url = None
 # Updates status on website via REST call
 def send_post_request(open: bool):
     response = requests.post(
-        rest_url + POST_ENDPOINT + ("open" if open else "closed"),
+        rest_url + POST_ENDPOINT,
+        data={"open": "true" if open else "false"},
         auth=(rest_uname, rest_pwd),
     )
 

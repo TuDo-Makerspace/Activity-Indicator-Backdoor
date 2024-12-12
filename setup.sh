@@ -54,7 +54,7 @@ elif [[ "$1" == "install" ]]; then
         echo "Starting systemd service..."
         systemctl start activity-indicator-backdoor.service
 
-        echo "Installation complete, the activity switch should be running now!"
+        echo "Installation complete, the telegram bot should now be running"
 elif [ "$1" == "uninstall" ]; then
         echo "Uninstalling..."
         rm -v -r $BIN_DIR/activity-indicator-backdoor
